@@ -23,6 +23,7 @@ export class ActorMergeBindingsContextUnion extends ActorMergeBindingsContext {
   }
 
   public async run(_action: IActionMergeBindingsContext): Promise<IActorMergeBindingsContextOutput> {
+    console.log('ActorMergeBindingsContextUnion');
     // Merge function: Union with set semantics
     const mergeHandlers: Record<string, IBindingsContextMergeHandler<any>> = {};
     mergeHandlers[this.contextKey] = new SetUnionBindingsContextMergeHandler();

@@ -24,6 +24,7 @@ export class ActorQuerySourceIdentifyHypermediaAnnotateSource extends ActorQuery
   public async testMetadata(
     action: IActionQuerySourceIdentifyHypermedia,
   ): Promise<IActorQuerySourceIdentifyHypermediaTest> {
+    console.log('ActorQuerySourceIdentifyHypermediaAnnotateSource - TEST');
     if (action.context.get(KEY_CONTEXT_WRAPPED)) {
       throw new Error('Unable to wrap query source multiple times');
     }
@@ -31,6 +32,7 @@ export class ActorQuerySourceIdentifyHypermediaAnnotateSource extends ActorQuery
   }
 
   public async run(action: IActionQuerySourceIdentifyHypermedia): Promise<IActorQuerySourceIdentifyHypermediaOutput> {
+    console.log('ActorQuerySourceIdentifyHypermediaAnnotateSource');
     const context = action.context.set(KEY_CONTEXT_WRAPPED, true);
     action.context = context;
 

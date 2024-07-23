@@ -33,6 +33,7 @@ export class ActorQueryProcessAnnotateSourceBinding extends ActorQueryProcess {
   }
 
   public async run(action: IActionQueryProcess): Promise<IActorQueryProcessOutput> {
+    console.log('ActorQueryProcessAnnotateSourceBinding');
     const context = action.context.set(KEY_CONTEXT_WRAPPED, true);
     action.context = context;
 
